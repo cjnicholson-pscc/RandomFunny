@@ -63,13 +63,13 @@ public class MemeResult {
     @Override
     public String toString() {
         return "MemeResult{" +
-                "postLink='" + postLink + '\'' +
-                ", subreddit='" + subreddit + '\'' +
-                ", title='" + title + '\'' +
-                ", url='" + url + '\'' +
-                ", nsfw=" + nsfw +
-                ", spoiler=" + spoiler +
-                ", author='" + author + '\'' +
+                "postLink='" + postLink + '\n' +
+                ", subreddit='" + subreddit + '\n' +
+                ", title='" + title + '\n' +
+                ", url='" + url + '\n' +
+                ", nsfw=" + nsfw + "\n" +
+                ", spoiler=" + spoiler + '\n' +
+                ", author='" + author + '\n' +
                 ", ups=" + ups +
                 '}';
     }
