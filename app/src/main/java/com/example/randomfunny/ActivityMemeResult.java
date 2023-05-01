@@ -2,6 +2,7 @@ package com.example.randomfunny;
 
 import android.app.AppComponentFactory;
 import android.os.Bundle;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -24,11 +25,14 @@ public class ActivityMemeResult extends AppCompatActivity {
 
     RecyclerView initialScreen;
 
+    EditText memeOutput;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_meme_image);
-        memeRecycler = findViewById(R.id.memeRecycler);
+
+        memeOutput = findViewById(R.id.editTextTextMultiLine2);
 
         getMeme();
     }
@@ -41,6 +45,9 @@ public class ActivityMemeResult extends AppCompatActivity {
                 MemeResult memeResults = response.body();
 
                 Toast.makeText(ActivityMemeResult.this, memeResults.toString(), Toast.LENGTH_SHORT).show();
+
+
+                memeOutput.setText(memeResults.toString());
                 //setAdapter(memeResults);
             }
 
