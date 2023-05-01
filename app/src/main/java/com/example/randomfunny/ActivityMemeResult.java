@@ -39,7 +39,8 @@ public class ActivityMemeResult extends AppCompatActivity {
             @Override
             public void onResponse(Call<MemeResult> call, Response<MemeResult> response) {
                 MemeResult memeResults = response.body();
-                Toast.makeText(ActivityMemeResult.this, memeResults.getAuthor(), Toast.LENGTH_SHORT).show();
+
+                Toast.makeText(ActivityMemeResult.this, memeResults.toString(), Toast.LENGTH_SHORT).show();
                 //setAdapter(memeResults);
             }
 

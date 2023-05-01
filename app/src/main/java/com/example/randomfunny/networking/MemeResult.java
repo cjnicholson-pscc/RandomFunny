@@ -60,4 +60,17 @@ public class MemeResult {
         return ups;
     }
 
+    @Override
+    public String toString() {
+        return "MemeResult{" +
+                "postLink='" + postLink + '\'' +
+                ", subreddit='" + subreddit + '\'' +
+                ", title='" + title + '\'' +
+                ", url='" + url + '\'' +
+                ", nsfw=" + nsfw +
+                ", spoiler=" + spoiler +
+                ", author='" + author + '\'' +
+                ", ups=" + ups +
+                '}';
+    }
 }
