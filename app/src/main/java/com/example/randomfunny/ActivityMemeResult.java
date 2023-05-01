@@ -48,7 +48,7 @@ public class ActivityMemeResult extends AppCompatActivity {
 
 
                 memeOutput.setText(memeResults.toString());
-                //setAdapter(memeResults);
+
             }
 
             @Override

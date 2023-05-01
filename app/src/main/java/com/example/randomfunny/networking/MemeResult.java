@@ -2,6 +2,9 @@ package com.example.randomfunny.networking;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.net.URL;
+import java.util.List;
+
 public class MemeResult {
     @SerializedName("postLink")
     String postLink;
@@ -26,6 +29,9 @@ public class MemeResult {
 
     @SerializedName("ups")
     int ups;
+
+    @SerializedName("preview")
+    List<URL> preview;
 
 
     public String getPostLink() {
@@ -60,17 +66,20 @@ public class MemeResult {
         return ups;
     }
 
+    public List getPreview() {return preview;}
+
     @Override
     public String toString() {
         return "MemeResult{" +
-                "postLink='" + postLink + '\n' +
-                ", subreddit='" + subreddit + '\n' +
-                ", title='" + title + '\n' +
-                ", url='" + url + '\n' +
-                ", nsfw=" + nsfw + "\n" +
-                ", spoiler=" + spoiler + '\n' +
-                ", author='" + author + '\n' +
+                "postLink='" + postLink + '\'' +
+                ", subreddit='" + subreddit + '\'' +
+                ", title='" + title + '\'' +
+                ", url='" + url + '\'' +
+                ", nsfw=" + nsfw +
+                ", spoiler=" + spoiler +
+                ", author='" + author + '\'' +
                 ", ups=" + ups +
+                ", preview=" + preview +
                 '}';
     }
 }
