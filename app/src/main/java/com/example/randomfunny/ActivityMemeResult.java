@@ -34,18 +34,18 @@ public class ActivityMemeResult extends AppCompatActivity {
     }
 
     private void getMeme() {
-        Call<List<MemeResult>> apiCall = RetrofitClient.getInstance().getApis().getMemes();
-        apiCall.enqueue(new Callback<List<MemeResult>>() {
+        Call<MemeResult> apiCall = RetrofitClient.getInstance().getApis().getMemes();
+        apiCall.enqueue(new Callback<MemeResult>() {
             @Override
-            public void onResponse(Call<List<MemeResult>> call, Response<List<MemeResult>> response) {
-                List<MemeResult> memeResults = response.body();
-                Toast.makeText(ActivityMemeResult.this, "Got Meme", Toast.LENGTH_SHORT).show();
-                setAdapter(memeResults);
+            public void onResponse(Call<MemeResult> call, Response<MemeResult> response) {
+                MemeResult memeResults = response.body();
+                Toast.makeText(ActivityMemeResult.this, memeResults.getAuthor(), Toast.LENGTH_SHORT).show();
+                //setAdapter(memeResults);
             }
 
             @Override
-            public void onFailure(Call<List<MemeResult>> call, Throwable t) {
-                Toast.makeText(ActivityMemeResult.this, "Error", Toast.LENGTH_SHORT).show();
+            public void onFailure(Call<MemeResult> call, Throwable t) {
+                Toast.makeText(ActivityMemeResult.this, t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }

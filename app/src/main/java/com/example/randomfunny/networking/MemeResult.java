@@ -27,8 +27,6 @@ public class MemeResult {
     @SerializedName("ups")
     int ups;
 
-    @SerializedName("preview")
-    String preview;
 
     public String getPostLink() {
         return postLink;
@@ -62,7 +60,4 @@ public class MemeResult {
         return ups;
     }
 
-    public String getPreview() {
-        return preview;
-    }
 }
